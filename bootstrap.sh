@@ -69,7 +69,9 @@ mysql -u root -e "FLUSH PRIVILEGES"
 # Download and extract
 if [[ ! -f "/vagrant/httpdocs/index.php" ]]; then
   cd /vagrant/httpdocs
-  wget http://www.magentocommerce.com/downloads/assets/${MAGE_VERSION}/magento-${MAGE_VERSION}.tar.gz
+  # The folowing url doesn't work anymore, so you have to place your magento tar file on a public url
+  # wget http://www.magentocommerce.com/downloads/assets/${MAGE_VERSION}/magento-${MAGE_VERSION}.tar.gz
+  wget http://your-public-url/filename.tar.gz
   tar -zxvf magento-${MAGE_VERSION}.tar.gz
   mv magento/* magento/.htaccess .
   chmod -R o+w media var
@@ -85,7 +87,9 @@ if [[ $SAMPLE_DATA == "true" ]]; then
 
   if [[ ! -f "/vagrant/magento-sample-data-${DATA_VERSION}.tar.gz" ]]; then
     # Only download sample data if we need to
-    wget http://www.magentocommerce.com/downloads/assets/${DATA_VERSION}/magento-sample-data-${DATA_VERSION}.tar.gz
+    # The folowing url doesn't work anymore, so you have to place your magento tar file on a public url
+    # wget http://www.magentocommerce.com/downloads/assets/${DATA_VERSION}/magento-sample-data-${DATA_VERSION}.tar.gz
+    wget http://your-public-url/filename.tar.gz
   fi
 
   tar -zxvf magento-sample-data-${DATA_VERSION}.tar.gz
