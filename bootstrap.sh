@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 SAMPLE_DATA=$1
-MAGE_VERSION="1.9.1.0"
-DATA_VERSION="1.9.0.0"
+#MAGE_VERSION="1.9.3.1"
+#DATA_VERSION="1.9.3.0"
 
 # Update Apt
 # --------------------
@@ -72,7 +72,7 @@ if [[ ! -f "/vagrant/httpdocs/index.php" ]]; then
   # The folowing url doesn't work anymore, so you have to place your magento tar file on a public url
   # wget http://www.magentocommerce.com/downloads/assets/${MAGE_VERSION}/magento-${MAGE_VERSION}.tar.gz
   wget http://your-public-url/filename.tar.gz
-  tar -zxvf magento-${MAGE_VERSION}.tar.gz
+  tar -zxvf filename.tar.gz
   mv magento/* magento/.htaccess .
   chmod -R o+w media var
   chmod o+w app/etc
@@ -91,7 +91,8 @@ if [[ $SAMPLE_DATA == "true" ]]; then
     # wget http://www.magentocommerce.com/downloads/assets/${DATA_VERSION}/magento-sample-data-${DATA_VERSION}.tar.gz
     wget http://your-public-url/filename.tar.gz
   fi
-
+  
+  # take note of the filenames and make sure your given file has the same name structure
   tar -zxvf magento-sample-data-${DATA_VERSION}.tar.gz
   cp -R magento-sample-data-${DATA_VERSION}/media/* httpdocs/media/
   cp -R magento-sample-data-${DATA_VERSION}/skin/*  httpdocs/skin/
@@ -106,11 +107,11 @@ if [ ! -f "/vagrant/httpdocs/app/etc/local.xml" ]; then
   sudo /usr/bin/php -f install.php -- --license_agreement_accepted yes \
   --locale en_US --timezone "America/Los_Angeles" --default_currency USD \
   --db_host localhost --db_name magentodb --db_user magentouser --db_pass password \
-  --url "http://127.0.0.1:8080/" --use_rewrites yes \
-  --use_secure no --secure_base_url "http://127.0.0.1:8080/" --use_secure_admin no \
+  --url "http://dev.magento.com/" --use_rewrites yes \
+  --use_secure no --secure_base_url "http://dev.magento.com/" --use_secure_admin no \
   --skip_url_validation yes \
   --admin_lastname Owner --admin_firstname Store --admin_email "admin@example.com" \
-  --admin_username admin --admin_password password123123
+  --admin_username admin --admin_password admin123
   /usr/bin/php -f shell/indexer.php reindexall
 fi
 
