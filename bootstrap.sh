@@ -107,8 +107,8 @@ if [ ! -f "/vagrant/httpdocs/app/etc/local.xml" ]; then
   sudo /usr/bin/php -f install.php -- --license_agreement_accepted yes \
   --locale en_US --timezone "America/Los_Angeles" --default_currency USD \
   --db_host localhost --db_name magentodb --db_user magentouser --db_pass password \
-  --url "http://dev.magento.com/" --use_rewrites yes \
-  --use_secure no --secure_base_url "http://dev.magento.com/" --use_secure_admin no \
+  --url "http://dev.toutcart.com/" --use_rewrites yes \
+  --use_secure no --secure_base_url "http://dev.toutcart.com/" --use_secure_admin no \
   --skip_url_validation yes \
   --admin_lastname Owner --admin_firstname Store --admin_email "admin@example.com" \
   --admin_username admin --admin_password admin123
