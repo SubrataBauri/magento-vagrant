@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.name = "dev.magento.com"
+    vb.name = "dev.toutcart.com"
   end
 
 end
