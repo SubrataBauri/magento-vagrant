@@ -20,7 +20,7 @@ A Simple Magento environment provisioner for [Vagrant](http://www.vagrantup.com/
 
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](http://www.vagrantup.com/)
-* Clone or [download](https://github.com/SubrataBauri/magento-vagrant.git/archive/master.zip) this repository to the root of your project directory `git clone https://github.com/r-baker/simple-magento-vagrant.git`
+* Clone or [download](https://github.com/SubrataBauri/magento-vagrant.git/archive/master.zip) this repository to the root of your project directory `git clone https://github.com/SubrataBauri/magento-vagrant.git`
 * In your project directory, run `vagrant up`
 
 ### Important note
@@ -46,14 +46,14 @@ Linux/Mac - use root user or sudo to edit this file:
 
    Add the following lines to your hosts file:
 ```
-10.0.0.100 dev.magento.com
+10.0.0.100 dev.toutcart.com
 ```
 
 
 ## Usage
 
-* In your browser, head to `dev.magento.com`
-* Magento CMS is accessed at `dev.magento.com/admin`
+* In your browser, head to `dev.toutcart.com`
+* Magento CMS is accessed at `dev.toutcart.com/admin`
 * User: `admin` Password: `admin123`
 * Access the virtual machine directly using `vagrant ssh`
 * When you're done `vagrant halt`
@@ -66,7 +66,7 @@ Sample data is not automatically downloaded and installed by default(** From dow
 
 > "I want sample data"
 
-Sample data installation can be disabled:
+Sample data installation can be enabled:
 
  * Open `Vagrantfile`
  * Change `sample_data = "false"` to `sample_data = "true"`
@@ -88,3 +88,5 @@ Sample data installation can be disabled:
 
 **Why no Puppet/Chef?**
 Admittedly, Puppet and Chef are excellent solutions for predictable and documented system configurations. The emphasis for this provisioner is on unopinionated simplicity. There are some excellent Puppet / Chef Magento configurations on Github with far more bells and whistles.
+
+https://www.sitepoint.com/email-debugging-mailcatcher/
